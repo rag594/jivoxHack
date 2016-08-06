@@ -82,14 +82,36 @@ function contains(a, obj) {
     return false;
 }
 var bst = new BinarySearchTree();
-bst.insert(17);
-bst.insert(11);
-bst.insert(43);
-bst.insert(9);
-bst.insert(65);
+var dataArray = [17,11,43,9,65];
+for(var k = 0;k<dataArray.length;k++){
+	bst.insert(dataArray[k]);
+}
 var parents = [];
 for(var i = 0 ;i < arr.length;i++){
 	parents.push(arr[i]["parent"]);
 }
-
+/* format for d3.js
+{
+	"name": "17",
+	"parent": "null",
+	"children": [
+		{
+			"name":"11",
+			"parent":"17",
+			"children":[
+				{"name":"9",
+				"parent":"11"}
+			]
+		},
+		{
+			"name":"43",
+			"parent":"17",
+			"children":[
+				{"name":"65",
+				"parent":"43"}
+			]
+		}
+	]
+}
+*/
 console.log(bst.toString());
